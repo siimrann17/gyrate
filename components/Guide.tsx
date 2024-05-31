@@ -10,7 +10,7 @@ const Guide = () => {
           We are here for you
         </p> */}
         <div className="flex flex-wrap justify-between gap-5 lg:gap-10">
-          <h2 className="bold-40 lg:bold-64 xl:max-w-[390px]">
+          <h2 className="bold-42 lg:bold-64 xl:max-w-[390px]">
             Guide You to Easy Path
           </h2>
           {/* <p className="regular-16 text-gray-30 xl:max-w-[520px]">
@@ -36,8 +36,8 @@ const Guide = () => {
           <Image
             src="/meter.svg"
             alt="meter"
-            width={16}
-            height={158}
+            width={12}
+            height={140}
             className="h-full w-auto"
           />
           <div className="flexBetween flex-col">

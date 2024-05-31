@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
           <Link href="/">
-            <Image src="/gyrateLogo.jpeg" alt="logo" width={74} height={29} />
+            <Image src="/gyrateLogo.jpeg" alt="logo" width={74} height={29} className="rounded-full" />
           </Link>
 
           <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">
