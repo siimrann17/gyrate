@@ -1,6 +1,6 @@
-'use client';  // Mark the component as a client component
+ 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 
 const feedbacks = [
   {
@@ -41,18 +41,19 @@ const feedbacks = [
   },
 ];
 
-
 const FeedbackSection = () => {
+  const scrollContainerRef = useRef(null);
+
   return (
-    <section className="py-16 mb-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 mb-16 bg-white overflow-hidden">
+      <div className="container mx-auto px-4" ref={scrollContainerRef}>
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">What Our Customers Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-no-wrap overflow-x-auto scrollbar-hide ">
           {feedbacks.map(({ id, name, feedback, rating }) => (
-            <div key={id} className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <div key={id} className="flex-shrink-0 w-96 bg-gray-100 p-6 rounded-lg shadow-md mx-4">
               <h3 className="text-xl font-semibold text-gray-700 mb-2">{name}</h3>
               <p className="text-gray-600 mb-4">{feedback}</p>
-              <div className="flex items-center">
+              <div className="flex items-center  mb-9">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}

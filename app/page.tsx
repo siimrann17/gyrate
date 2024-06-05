@@ -10,10 +10,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Camp /> */}
-      <Guide />
+      {/* <Camp /> */} 
       <Range/>
-      <Features />
+       <Features />
+      <Guide />
+     
       <Feedback/>
       {/* <GetApp /> */}
     </>

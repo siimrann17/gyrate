@@ -4,7 +4,6 @@ export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
   { href: '/', key: 'how_hilink_work', label: 'About Us' },
   { href: '/', key: 'services', label: 'Beacon' },
-  { href: '/', key: 'pricing ', label: 'Pricing ' },
   { href: '/', key: 'contact_us', label: 'Help' },
 ];
 
@@ -26,21 +25,21 @@ export const FEATURES = [
       "CONTENT"
   },
   {
-    title: 'Set a schedule',
+    title: 'No Extra Fuel Charges',
     icon: '/calendar.svg',
     variant: 'green',
     description:
       "CONTENT",
   },
   {
-    title: 'Right Smart Ride Green',
+    title: 'Eco-Friendly Ride',
     icon: '/tech.svg',
     variant: 'green',
     description:
       'CONTENT',
   },
   {
-    title: 'Many new locations everyday',
+    title: 'Safety and Privacy',
     icon: '/location.svg',
     variant: 'orange',
     description:
@@ -54,17 +53,12 @@ export const FOOTER_LINKS = [
     title: 'Learn More',
     links: [
       'About Gyrate',
-      'Press Releases',
-      'Environment',
-      'Jobs',
+      'Career',
       'Privacy Policy',
       'Contact Us',
     ],
   },
-  {
-    title: 'Our Community',
-    links: ['Ride', 'e-scooters'],
-  },
+
 ];
 
 export const FOOTER_CONTACT_INFO = {
