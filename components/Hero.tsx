@@ -233,11 +233,16 @@
 // export default Hero;
 
 
+
+
+
+
 "use client";
 
 import React, { useState } from 'react';
 import Image from "next/image";
 import Button from "./Button";
+import Navbar from './Navbar';
 
 const Hero = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -377,7 +382,7 @@ const Hero = () => {
             title="How we work?"
             icon="/play.svg"
             variant="btn_white_text"
-            className="text-9xl"
+            className="text-xl"
           />
         </div>
       </div>

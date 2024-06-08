@@ -5,16 +5,23 @@ import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
 import Range from "@/components/Range"
 import Feedback from "@/components/Feedback"
+import Guide2 from "@/components/Guide2"
+import Navbar from "@/components/Navbar"
+import Guide3 from "@/components/Guide3"
+
+
 
 export default function Home() {
   return (
     <>
+ 
       <Hero />
       {/* <Camp /> */} 
       <Range/>
        <Features />
       <Guide />
-     
+     <Guide2 />
+     <Guide3 />
       <Feedback/>
       {/* <GetApp /> */}
     </>

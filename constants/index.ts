@@ -40,7 +40,7 @@ export const FEATURES = [
   },
   {
     title: 'Safety and Privacy',
-    icon: '/location.svg',
+    icon: '/security.png',
     variant: 'orange',
     description:
       'CONTENT',
@@ -75,6 +75,6 @@ export const SOCIALS = {
     '/facebook.svg',
     '/instagram.svg',
     '/twitter.svg',
-    '/youtube.svg',
+    '/linkedin.jpg',
   ],
 };

@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="border bg-gray-20" />
         <p className="regular-14 w-full text-center text-gray-30">
-          2024 Gyrate | All rights reserved
+        © Copyright 2022, All Rights Reserved by GYRATE
         </p>
       </div>
     </footer>
