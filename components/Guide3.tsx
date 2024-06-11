@@ -31,7 +31,7 @@ const Environment = () => {
           </h2>
           <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-green-500">
             <p className="text-lg text-gray-800 mb-4">
-              Did you know that 60% of all car trips are less than six miles? These short trips contribute significantly to traffic congestion and air pollution.
+             <b> Did you know that 60% of all car trips are less than six miles? </b>These short trips contribute significantly to traffic congestion and air pollution.
             </p>
             <p className="text-lg text-gray-800">
               By choosing Gyrate for these short distances, you’re helping to reduce the number of cars on the road, leading to less traffic and lower emissions.
@@ -47,19 +47,19 @@ const Environment = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-blue-500">
               <h3 className="text-lg font-bold text-blue-800 mb-2">CO2 Emissions</h3>
               <p className="text-lg text-gray-800 mb-4">
-                The average passenger vehicle emits about 251 grams per kilometer of CO2.
+                The average passenger vehicle emits about <b>251 grams per kilometer of CO2.</b>
               </p>
               <p className="text-lg text-gray-800">
-                Our e-scooters emit over 90% less CO2 per passenger kilometer traveled compared to a petrol bike.
+                Our e-scooters emit over <b>90% less CO2 </b>per passenger kilometer traveled compared to a petrol bike.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-red-500">
-              <h3 className="text-lg font-bold text-red-800 mb-2">Annual Savings</h3>
+              <h3 className="text-lg font-bold text-red-800 mb-2">Projected Outcomes</h3>
               <p className="text-lg text-gray-800 mb-4">
-                By choosing Gyrate for your daily mobility needs, we could collectively save more than 44,000 tonnes of CO2 a year.
+                By choosing Gyrate for your daily mobility needs, we could collectively <b> save more than 44,000 tonnes of CO2 a year.</b>
               </p>
               <p className="text-lg text-gray-800">
-                That’s equivalent to the annual emissions from 29,000 cars!
+               <b> That’s equivalent to the annual emissions from 29,000 cars!</b>
               </p>
             </div>
           </div>
