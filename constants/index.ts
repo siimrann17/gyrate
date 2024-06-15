@@ -2,7 +2,7 @@
 
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
-  { href: '/', key: 'how_hilink_work', label: 'About Us' },
+  { href: '/About', key: 'AboutUs', label: 'About Us' },
   { href: '/', key: 'services', label: 'Beacon' },
   { href: '/', key: 'contact_us', label: 'Help' },
 ];
@@ -19,31 +19,31 @@ export const PEOPLE_URL = [
 export const FEATURES = [
   {
     title: 'Affordable Rides',
-    icon: '/map.svg',
+    icon: '/affordable.png',
     variant: 'green',
     description:
-      "CONTENT"
+      "Replace traditional rides with our premium quality scooters, all at a much lower cost. Choose from a variety of hourly plans to suit your needs and budget."
   },
   {
-    title: 'No Extra Fuel Charges',
+    title: 'Transparent Pricing',
     icon: '/calendar.svg',
     variant: 'green',
     description:
-      "CONTENT",
+      "No surprises or hidden fees—what you see is what you pay. Also no extra energy charges included.",
   },
   {
     title: 'Eco-Friendly Ride',
-    icon: '/tech.svg',
+    icon: '/eco.png',
     variant: 'green',
     description:
-      'CONTENT',
+      'Reduce your carbon footprint and contribute to a greener future with every ride',
   },
   {
     title: 'Safety and Privacy',
     icon: '/security.png',
     variant: 'orange',
     description:
-      'CONTENT',
+      'Enjoy solitary rides without the crowds, giving you space and peace on your journey.The Gyrate Beacon offers immediate help in any unfortunate event, ensuring a safe ride every time.',
   },
 ];
 

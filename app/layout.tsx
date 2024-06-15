@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-
+import { NAV_LINKS } from "@/constants";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Gyrate",
-  description: "Travel UI/UX App for Camping",
+  description: "Scooter Rental Services Application",
 };
 
 export default function RootLayout({
