@@ -45,7 +45,7 @@ const FeedbackSection = () => {
   const scrollContainerRef = useRef(null);
 
   return (
-    <section className="py-16 mb-16 bg-white overflow-hidden">
+    <section className="py-16 mb-16 bg-rgb(218, 238, 252) overflow-hidden">
       <div className="container mx-auto px-4" ref={scrollContainerRef}>
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">What Our Customers Say</h2>
         <div className="flex flex-no-wrap overflow-x-auto scrollbar-hide ">

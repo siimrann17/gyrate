@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function AboutUs() {
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center py-12">
+    <div className="bg-rgb(218, 238, 252) min-h-screen flex flex-col items-center py-12">
       <div className="container mx-auto px-4 text-center">
 
         <section className="mb-16">

@@ -44,7 +44,7 @@ const PremiumScooters = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-rgb(218, 238, 252)">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800  mt-5 mb-16">Our Premium Range of Scooters</h2>
         <div ref={carouselRef} className="overflow-x-hidden whitespace-nowrap py-4 relative">

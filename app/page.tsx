@@ -8,7 +8,6 @@ import Feedback from "@/components/Feedback"
 import Guide2 from "@/components/Guide2"
 import Navbar from "@/components/Navbar"
 import Guide3 from "@/components/Guide3"
-import layout from '@/app/layout';
 import ScooterPopup from "@/components/ScooterPopup";
 
 
