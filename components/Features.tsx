@@ -49,7 +49,7 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
         <Image src={icon} alt="map" width={28} height={28} />
       </div>
       <h2 className="bold-20 lg:bold-32 mt-5 capitalize bg-rgb(218, 238, 252)">{title}</h2>
-      <p className="regular-16 mt-5 bg-rgb(218, 238, 252) text-gray-30 lg:mt-[30px] lg:bg-none bg-rgb(218, 238, 252)">
+      <p className="regular-16 mt-5 bg-rgb(218, 238, 252) text-black lg:mt-[30px] lg:bg-none bg-rgb(218, 238, 252)">
         {description}
       </p>
     </li>

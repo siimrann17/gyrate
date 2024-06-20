@@ -9,6 +9,7 @@ import Guide2 from "@/components/Guide2"
 import Navbar from "@/components/Navbar"
 import Guide3 from "@/components/Guide3"
 import ScooterPopup from "@/components/ScooterPopup";
+import Chatbot from "@/components/Chatbot";
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <>
       <Hero />
       {/* <Camp /> */} 
+      <Chatbot />
       <Range/>
        <Features />
       {/* <Guide />

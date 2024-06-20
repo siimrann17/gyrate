@@ -17,21 +17,19 @@ body {
 
 @layer utilities {
   .btn_white { 
-    @apply  border-white bg-white px-8 py-3 text-blue-400
+    @apply  border-white bg-white px-6 py-2 text-blue-400
   }
   .btn_white_text  { 
-    @apply  border-white bg-white px-8 py-3 text-gray-90
+    @apply  border-white bg-white px-6 py-2 text-gray-90
   }
   .btn_green  { 
-    @apply  border-blue-400 bg-blue-50 px-8 py-5 text-white
+    @apply  border-blue-400 bg-blue-50 px-6 py-2 text-white
   }
   .btn_dark_green { 
     @apply bg-black  text-white transition-all hover:bg-gray-800 !important;
 }
-
-
   .btn_dark_green_outline  { 
-    @apply border-gray-20 bg-green-90 px-6 py-2 text-white
+    @apply border-gray-20 bg-green-90 px-8 py-4 text-white
   }
   
   .max-container {
