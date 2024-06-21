@@ -404,7 +404,7 @@ const Hero = () => {
   const [showScooterPopup, setShowScooterPopup] = useState(false);
 
   const scooters = [
-<<<<<<< HEAD
+
     { brand: 'Scooter A', price: 100, speed: 20, image: '/scooters/scooter1.jpeg' },
     { brand: 'Scooter B', price: 120, speed: 22, image: '/scooters/scooter2.jpeg' },
     { brand: 'Scooter C', price: 150, speed: 25, image: '/scooters/scooter3.jpeg' },
@@ -414,7 +414,7 @@ const Hero = () => {
     // { brand: 'Scooter G', price: 120, speed: 22, image: '/scooters/scooter2.jpeg' },
     // { brand: 'Scooter H', price: 150, speed: 25, image: '/scooters/scooter4.jpeg' },
     
-=======
+
     {
       brand: "Scooter A",
       price: 100,
@@ -463,7 +463,7 @@ const Hero = () => {
       speed: 25,
       image: "/scooters/scooter4.jpeg",
     },
->>>>>>> 6bca45b48fee107807c6ef9eba33b06c027e1659
+
   ];
 
   const handleDateChange = (event) => {
