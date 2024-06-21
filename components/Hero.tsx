@@ -1,4 +1,3 @@
-
 //  "use client";
 
 // import React, { useState } from 'react';
@@ -6,7 +5,6 @@
 // import Button from "./Button";
 // import PopUp from "./PopUp";
 // import ScooterPopup from "./ScooterPopup";
-
 
 // const Hero = () => {
 //   const [selectedDate, setSelectedDate] = useState('');
@@ -25,7 +23,7 @@
 //     { brand: 'Scooter F', price: 150, speed: 25, image: '/scooters/scooter6.jpeg' },
 //     { brand: 'Scooter G', price: 120, speed: 22, image: '/scooters/scooter2.jpeg' },
 //     { brand: 'Scooter H', price: 150, speed: 25, image: '/scooters/scooter4.jpeg' },
-    
+
 //   ];
 
 //   const handleDateChange = (event) => {
@@ -197,8 +195,6 @@
 // };
 
 // export default Hero;
-
-
 
 // // import React, { useState } from 'react';
 // // import PopUp from './PopUp';
@@ -393,30 +389,69 @@
 
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
 import PopUp from "./PopUp";
 import ScooterPopup from "./ScooterPopup";
 
 const Hero = () => {
-  const [selectedDate, setSelectedDate] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [destination, setDestination] = useState('');
+  const [selectedDate, setSelectedDate] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [destination, setDestination] = useState("");
   const [stops, setStops] = useState([]);
   const [showMapPopup, setShowMapPopup] = useState(false);
   const [showScooterPopup, setShowScooterPopup] = useState(false);
 
   const scooters = [
-    { brand: 'Scooter A', price: 100, speed: 20, image: '/scooters/scooter1.jpeg' },
-    { brand: 'Scooter B', price: 120, speed: 22, image: '/scooters/scooter2.jpeg' },
-    { brand: 'Scooter C', price: 150, speed: 25, image: '/scooters/scooter3.jpeg' },
-    { brand: 'Scooter D', price: 100, speed: 20, image: '/scooters/scooter4.jpeg' },
-    { brand: 'Scooter E', price: 120, speed: 22, image: '/scooters/scooter5.jpeg' },
-    { brand: 'Scooter F', price: 150, speed: 25, image: '/scooters/scooter6.jpeg' },
-    { brand: 'Scooter G', price: 120, speed: 22, image: '/scooters/scooter2.jpeg' },
-    { brand: 'Scooter H', price: 150, speed: 25, image: '/scooters/scooter4.jpeg' },
-    
+    {
+      brand: "Scooter A",
+      price: 100,
+      speed: 20,
+      image: "/scooters/scooter1.jpeg",
+    },
+    {
+      brand: "Scooter B",
+      price: 120,
+      speed: 22,
+      image: "/scooters/scooter2.jpeg",
+    },
+    {
+      brand: "Scooter C",
+      price: 150,
+      speed: 25,
+      image: "/scooters/scooter3.jpeg",
+    },
+    {
+      brand: "Scooter D",
+      price: 100,
+      speed: 20,
+      image: "/scooters/scooter4.jpeg",
+    },
+    {
+      brand: "Scooter E",
+      price: 120,
+      speed: 22,
+      image: "/scooters/scooter5.jpeg",
+    },
+    {
+      brand: "Scooter F",
+      price: 150,
+      speed: 25,
+      image: "/scooters/scooter6.jpeg",
+    },
+    {
+      brand: "Scooter G",
+      price: 120,
+      speed: 22,
+      image: "/scooters/scooter2.jpeg",
+    },
+    {
+      brand: "Scooter H",
+      price: 150,
+      speed: 25,
+      image: "/scooters/scooter4.jpeg",
+    },
   ];
 
   const handleDateChange = (event) => {
@@ -425,7 +460,7 @@ const Hero = () => {
 
   const handleTimeChange = (event) => {
     const value = event.target.value;
-    const [hours, minutes] = value.split(':').map(Number);
+    const [hours, minutes] = value.split(":").map(Number);
 
     if (
       (hours === 8 && minutes >= 0 && minutes <= 30) || // 8:00 AM to 8:30 AM
@@ -434,16 +469,18 @@ const Hero = () => {
     ) {
       setStartTime(value);
     } else {
-      alert('Please select a time between 8:00 AM and 8:30 PM');
+      alert("Please select a time between 8:00 AM and 8:30 PM");
     }
   };
 
   const handleAddStop = () => {
-    setStops([...stops, '']);
+    setStops([...stops, ""]);
   };
 
   const handleStopChange = (index, event) => {
-    const newStops = stops.map((stop, i) => (i === index ? event.target.value : stop));
+    const newStops = stops.map((stop, i) =>
+      i === index ? event.target.value : stop
+    );
     setStops(newStops);
   };
 
@@ -470,14 +507,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 mt-0 lg:py-20 xl:flex-row">
+    <section className="max-container padding-container flex flex-col gap-10 py-10 pb-32 md:gap-28 mt-0 lg:py-20 xl:flex-row">
       <div className="hero-map" />
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="bold-52 lg:bold-87.8">Get Set Gyrate!</h1>
 
         <div className="relative flex flex-1 items-start mt-8">
-          <div className="relative z-20 flex w-[380px] flex-col gap-8 rounded-3xl bg-black px-8 py-8">
+          <div className="relative z-20 flex w-[380px] flex-col gap-8 rounded-xl bg-blue-500 px-8 py-8">
             <div className="flex flex-col">
               <div className="flexBetween">
                 <p className="regular-16 text-white">Enter Details</p>
@@ -486,9 +523,11 @@ const Hero = () => {
                 <select
                   value={selectedDate}
                   onChange={handleDateChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 px-4 py-2"
+                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 px-4 py-2 rounded-md"
                 >
-                  <option value="" disabled>Select Day</option>
+                  <option value="" disabled>
+                    Select Day
+                  </option>
                   <option value="today">Today</option>
                   <option value="tomorrow">Tomorrow</option>
                   <option value="dayAfterTomorrow">Day after Tomorrow</option>
@@ -498,7 +537,7 @@ const Hero = () => {
                   type="time"
                   value={startTime}
                   onChange={handleTimeChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2"
+                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2 rounded-md"
                   placeholder="Enter Start Time"
                   min="08:00"
                   max="20:30"
@@ -507,9 +546,11 @@ const Hero = () => {
                 <select
                   value={selectedDate}
                   onChange={handleDateChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 mt-1 px-4 py-2"
+                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 mt-1 px-4 py-2 rounded-md"
                 >
-                  <option value="" disabled>Duration</option>
+                  <option value="" disabled>
+                    Duration
+                  </option>
                   <option value="One">One</option>
                   <option value="Two">Two</option>
                   <option value="Three">Three</option>
@@ -524,14 +565,14 @@ const Hero = () => {
                     type="text"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2"
+                    className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
                     placeholder="Destination"
                   />
-                  <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full mb-7">
+                  <div className="flex items-center">
                     <button
                       type="button"
                       onClick={handleAddStop}
-                      className="text-black text-5xl"
+                      className="text-black text-2xl bg-white rounded-full w-10 h-10 flex items-center justify-center border border-black hover:bg-gray-100"
                     >
                       +
                     </button>
@@ -544,14 +585,15 @@ const Hero = () => {
                       type="text"
                       value={stop}
                       onChange={(e) => handleStopChange(index, e)}
-                      className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2"
+                      className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
                       placeholder={`Stop ${index + 1}`}
+                      style={{ width: "250px" }} // Ensure consistent width
                     />
-                    <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full mb-7">
+                    <div className="flex items-center">
                       <button
                         type="button"
                         onClick={() => handleDeleteStop(index)}
-                        className="text-black text-2xl"
+                        className="text-black text-2xl bg-white rounded-full w-8 h-8 flex items-center justify-center border border-gray-300 hover:bg-gray-100"
                       >
                         ❌
                       </button>
@@ -562,7 +604,7 @@ const Hero = () => {
                 <button
                   type="button"
                   onClick={handleProceed}
-                  className="border-black border-5 w-[250px] bg-white text-black text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2"
+                  className="border-black border-5 w-[250px] bg-white text-black text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2 rounded-md"
                 >
                   Proceed
                 </button>
@@ -582,10 +624,7 @@ const Hero = () => {
       )}
 
       {showScooterPopup && (
-        <ScooterPopup
-          scooters={scooters}
-          onClose={handleCloseScooterPopup}
-        />
+        <ScooterPopup scooters={scooters} onClose={handleCloseScooterPopup} />
       )}
     </section>
   );

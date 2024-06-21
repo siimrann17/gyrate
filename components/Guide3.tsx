@@ -16,12 +16,14 @@ const Environment = () => {
 
       <div className="min-h-screen bg-gradient-to-r p-5">
         <h1 className="text-4xl font-bold text-center text-black mb-8">
-        Pioneering Environmental Change Together
+          Pioneering Environmental Change Together
         </h1>
 
         <section className="max-w-4xl mx-auto mb-10">
           <p className="text-lg text-center text-gray-800">
-            By choosing Gyrate, you’re not just choosing a ride, you’re choosing to make a difference. Together, we can drive towards a sustainable future.
+            By choosing Gyrate, you’re not just choosing a ride, you’re choosing
+            to make a difference. Together, we can drive towards a sustainable
+            future.
           </p>
         </section>
 
@@ -29,12 +31,19 @@ const Environment = () => {
           <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
             Transforming Urban Travel
           </h2>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-green-500">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-orange-mainorange">
             <p className="text-lg text-gray-800 mb-4">
-             <b> Did you know that 60% of all car trips are less than six miles? </b>These short trips contribute significantly to traffic congestion and air pollution.
+              <b>
+                {" "}
+                Did you know that 60% of all car trips are less than six miles?{" "}
+              </b>
+              These short trips contribute significantly to traffic congestion
+              and air pollution.
             </p>
             <p className="text-lg text-gray-800">
-              By choosing Gyrate for these short distances, you’re helping to reduce the number of cars on the road, leading to less traffic and lower emissions.
+              By choosing Gyrate for these short distances, you’re helping to
+              reduce the number of cars on the road, leading to less traffic and
+              lower emissions.
             </p>
           </div>
         </section>
@@ -44,22 +53,32 @@ const Environment = () => {
             Your Ride, Your Impact
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-blue-500">
-              <h3 className="text-lg font-bold text-blue-800 mb-2">CO2 Emissions</h3>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-orange-mainorange">
+              <h3 className="text-lg font-bold text-orange-mainorange mb-2">
+                CO2 Emissions
+              </h3>
               <p className="text-lg text-gray-800 mb-4">
-                The average passenger vehicle emits about <b>251 grams per kilometer of CO2.</b>
+                The average passenger vehicle emits about{" "}
+                <b>251 grams per kilometer of CO2.</b>
               </p>
               <p className="text-lg text-gray-800">
-                Our e-scooters emit over <b>90% less CO2 </b>per passenger kilometer traveled compared to a petrol bike.
+                Our e-scooters emit over <b>90% less CO2 </b>per passenger
+                kilometer traveled compared to a petrol bike.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-red-500">
-              <h3 className="text-lg font-bold text-red-800 mb-2">Projected Outcomes</h3>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center border-l-4 border-orange-mainorange">
+              <h3 className="text-lg font-bold text-orange-mainorange mb-2">
+                Projected Outcomes
+              </h3>
               <p className="text-lg text-gray-800 mb-4">
-                By choosing Gyrate for your daily mobility needs, we could collectively <b> save more than 44,000 tonnes of CO2 a year.</b>
+                By choosing Gyrate for your daily mobility needs, we could
+                collectively <b> save more than 44,000 tonnes of CO2 a year.</b>
               </p>
               <p className="text-lg text-gray-800">
-               <b> That’s equivalent to the annual emissions from 29,000 cars!</b>
+                <b>
+                  {" "}
+                  That’s equivalent to the annual emissions from 29,000 cars!
+                </b>
               </p>
             </div>
           </div>
@@ -96,4 +115,3 @@ const Environment = () => {
 };
 
 export default Environment;
-

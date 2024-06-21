@@ -11,6 +11,9 @@ module.exports = {
         green: {
           50: '#30AF5B',
           90: '#292C27',
+          green1: '#007F73',
+          green2: '#4CCD99',
+          green3: '#'
         },
         gray: {
           10: '#EEEEEE',
@@ -21,12 +24,24 @@ module.exports = {
         },
         orange: {
           50: '#FF814C',
+          o1 :'#FF7F3E',
+          mainorange: '#DC5F00',
+          light:'#FD9B63',
         },
         blue: {
           70: '#021639',
+          b1: '#0F1035',
+          b2: '#365486',
+          b3: '#7FC7D9',
+          o2 : '#80C4E9',
+          o3 : '#80C4E9',
+          dark: '#002379',
+          mainblue: '#CAF4FF',
         },
         yellow: {
           50: '#FEC601',
+          yellow1: '#4CCD99',
+          yellow2: '#FFF455'
         },
       },
       backgroundImage: {

@@ -18,7 +18,9 @@ const Features = () => {
 
         <div className="z-20 flex w-full flex-col lg:w-[60%] bg-rgb(218, 238, 252)">
           <div className="relative bg-rgb(218, 238, 252)">
-            <h2 className="bold-40 bold-78 bg-rgb(218, 238, 252)">Why Choose Gyrate?</h2>
+            <h2 className="bold-40 bold-78 bg-rgb(218, 238, 252)">
+              Why Choose Gyrate?
+            </h2>
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20 bg-rgb(218, 238, 252)">
             {FEATURES.map((feature) => (
@@ -48,7 +50,9 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
       <div className="rounded-full p-4 lg:p-7 bg-blue-200">
         <Image src={icon} alt="map" width={28} height={28} />
       </div>
-      <h2 className="bold-20 lg:bold-32 mt-5 capitalize bg-rgb(218, 238, 252)">{title}</h2>
+      <h2 className="bold-20 lg:bold-32 mt-5 capitalize bg-rgb(218, 238, 252)">
+        {title}
+      </h2>
       <p className="regular-16 mt-5 bg-rgb(218, 238, 252) text-black lg:mt-[30px] lg:bg-none bg-rgb(218, 238, 252)">
         {description}
       </p>
