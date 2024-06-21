@@ -439,30 +439,30 @@ const Hero = () => {
       speed: 20,
       image: "/scooters/scooter4.jpeg",
     },
-    {
-      brand: "Scooter E",
-      price: 120,
-      speed: 22,
-      image: "/scooters/scooter5.jpeg",
-    },
-    {
-      brand: "Scooter F",
-      price: 150,
-      speed: 25,
-      image: "/scooters/scooter6.jpeg",
-    },
-    {
-      brand: "Scooter G",
-      price: 120,
-      speed: 22,
-      image: "/scooters/scooter2.jpeg",
-    },
-    {
-      brand: "Scooter H",
-      price: 150,
-      speed: 25,
-      image: "/scooters/scooter4.jpeg",
-    },
+    // {
+    //   brand: "Scooter E",
+    //   price: 120,
+    //   speed: 22,
+    //   image: "/scooters/scooter5.jpeg",
+    // },
+    // {
+    //   brand: "Scooter F",
+    //   price: 150,
+    //   speed: 25,
+    //   image: "/scooters/scooter6.jpeg",
+    // },
+    // {
+    //   brand: "Scooter G",
+    //   price: 120,
+    //   speed: 22,
+    //   image: "/scooters/scooter2.jpeg",
+    // },
+    // {
+    //   brand: "Scooter H",
+    //   price: 150,
+    //   speed: 25,
+    //   image: "/scooters/scooter4.jpeg",
+    // },
 
   ];
 
