@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,8 +12,8 @@
 }
 
 body {
-  font-family: Inter;
-  background-color: rgb(218, 238, 252);
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(202, 244, 255);
 }
 
 @layer utilities {
@@ -26,7 +27,7 @@ body {
     @apply  border-blue-400 bg-blue-50 px-6 py-2 text-white
   }
   .btn_dark_green { 
-    @apply bg-black  text-white transition-all hover:bg-gray-800 !important;
+    @apply bg-blue-500  text-white transition-all hover:bg-gray-800 !important;
 }
   .btn_dark_green_outline  { 
     @apply border-gray-20 bg-green-90 px-8 py-4 text-white
@@ -125,10 +126,10 @@ body {
     @apply text-[16px] font-[700];
   }
 
-  /* Hero */
+  /* Hero
   .hero-map {
     @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
-  }
+  } */
 
   /* Camp */
   .camp-quote {
