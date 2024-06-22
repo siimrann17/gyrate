@@ -55,7 +55,7 @@ export const FOOTER_LINKS = [
       { label: 'About Gyrate', href: '/About' },
       { label: 'Career', href: '/career' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
-      { label: 'Contact Us', href: '/contact' },
+      // { label: 'Contact Us', href: '/contact' },
     ],
   },
 

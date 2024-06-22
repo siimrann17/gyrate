@@ -333,49 +333,51 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-4">
+        {/* Gyropod Button Always Visible */}
+        <div className="relative">
+          <div
+            className="bg-blue-500 text-white px-4 py-1 cursor-pointer"
+            onClick={toggleDropdown}
+            style={{ borderRadius: "15px" }}
+          >
+            <button type="button" className="flex items-center">
+              <b>Gyropod</b>
+              <svg
+                className={`w-4 h-4 ml-2 transition-transform ${
+                  dropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+          </div>
+          {dropdownOpen && (
+            <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10">
+              {["Gyropod 1"
+              // , "Site 2", "Site 3"
+              ].map((site, index) => (
+                <li
+                  key={index}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  {site}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
         {isLoggedIn ? (
           <>
-            <div className="relative">
-              <div
-                className="bg-blue-500 text-white px-4 py-1 cursor-pointer"
-                onClick={toggleDropdown}
-                style={{ borderRadius: "15px" }}
-              >
-                <button type="button" className="flex items-center">
-                  <b>Gyropod</b>
-                  <svg
-                    className={`w-4 h-4 ml-2 transition-transform ${
-                      dropdownOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-              {dropdownOpen && (
-                <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10">
-                  {["Gyropod 1"
-                  // , "Site 2", "Site 3"
-                ].map((site, index) => (
-                      <li
-                        key={index}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        {site}
-                      </li>
-                    ))}
-                </ul>
-              )}
-            </div>
             <Button
               type="button"
               title="My Rides"
