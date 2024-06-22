@@ -309,6 +309,9 @@
 
 // export default ScooterPopup;
 
+// 
+
+
 import React, { useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import LoginSignupPopup from './LoginSignupPopup';
@@ -318,10 +321,11 @@ const ScooterPopup = ({ scooters, onClose }) => {
   const [selectedScooter, setSelectedScooter] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [showLoginSignup, setShowLoginSignup] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Dummy state for login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
 
   const handleClose = () => {
     onClose();
@@ -342,7 +346,9 @@ const ScooterPopup = ({ scooters, onClose }) => {
       if (!isLoggedIn) {
         setShowLoginSignup(true);
       } else {
-        const scooterQuery = encodeURIComponent(JSON.stringify({ ...scooters[selectedScooter], selectedPackage }));
+        const scooterQuery = encodeURIComponent(
+          JSON.stringify({ ...scooters[selectedScooter], selectedPackage })
+        );
         router.push(`/Payment?scooter=${scooterQuery}`);
       }
     }
@@ -351,8 +357,19 @@ const ScooterPopup = ({ scooters, onClose }) => {
   const handleLoginSignupSuccess = () => {
     setIsLoggedIn(true);
     setShowLoginSignup(false);
-    const scooterQuery = encodeURIComponent(JSON.stringify({ ...scooters[selectedScooter], selectedPackage }));
+    const scooterQuery = encodeURIComponent(
+      JSON.stringify({ ...scooters[selectedScooter], selectedPackage })
+    );
     router.push(`/Payment?scooter=${scooterQuery}`);
+  };
+
+  // Function to calculate estimated price based on selected scooter and package
+  const calculateEstimatedPrice = () => {
+    if (selectedScooter !== null) {
+      const scooter = scooters[selectedScooter];
+      return scooter.price !== undefined ? scooter.price : 'N/A';
+    }
+    return 'N/A';
   };
 
   return (
@@ -383,7 +400,7 @@ const ScooterPopup = ({ scooters, onClose }) => {
                       }`}
                       onClick={(e) => handleSelectPackage('Package1', e)}
                     >
-                      Package1: <br /> Rs20/2km
+                      2hr  <br /> 20 km
                     </button>
                     <button
                       className={`px-2 py-1 rounded-lg text-center ${
@@ -391,7 +408,7 @@ const ScooterPopup = ({ scooters, onClose }) => {
                       }`}
                       onClick={(e) => handleSelectPackage('Package2', e)}
                     >
-                      Package2: <br /> Rs35/4km
+                      1 hr <br /> 10 km
                     </button>
                   </div>
                 )}
@@ -414,6 +431,11 @@ const ScooterPopup = ({ scooters, onClose }) => {
             >
               Proceed to Payment
             </button>
+            {selectedScooter !== null && selectedPackage !== null && (
+              <div className="ml-4 text-gray-600">
+                Est. price: Rs.{calculateEstimatedPrice()} {/* Display estimated price here */}
+              </div>
+            )}
           </div>
         </div>
       </div>
