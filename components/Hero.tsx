@@ -119,7 +119,7 @@ const Hero = () => {
                 <select
                   value={selectedDate}
                   onChange={handleDateChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 px-4 py-2 rounded-md"
+                  className="text-10l text-gray-20 border-zinc-800 w-[250px] border-2 ml-8 m-5 px-4 py-2 rounded-md"
                 >
                   <option value="" disabled>
                     Select Day
@@ -133,7 +133,7 @@ const Hero = () => {
                   type="time"
                   value={startTime}
                   onChange={handleTimeChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2 rounded-md"
+                  className="text-10l text-gray-30 border-zinc-800 w-[250px] border-2 ml-8 mt-1 m-5 px-4 py-2 rounded-md"
                   placeholder="Enter Start Time"
                   min="08:00"
                   max="20:30"
@@ -142,7 +142,7 @@ const Hero = () => {
                 <select
                   value={selectedDate}
                   onChange={handleDateChange}
-                  className="text-10l border-zinc-800 w-[250px] border-2 ml-8 m-5 mt-1 px-4 py-2 rounded-md"
+                  className="text-10l text-gray-20 border-zinc-800 w-[250px] border-2 ml-8 m-5 mt-1 px-4 py-2 rounded-md"
                 >
                   <option value="" disabled>
                     Duration
@@ -161,7 +161,7 @@ const Hero = () => {
                     type="text"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
+                    className="text-10l text-gray-30 border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
                     placeholder="Destination"
                   />
                   <div className="flex items-center">
