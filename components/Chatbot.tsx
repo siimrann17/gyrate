@@ -19,6 +19,7 @@ const Chatbot = () => {
         onClick={toggleChatbot}
         className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
       >
+      
         Having trouble? Ask Aida
       </button>
 
