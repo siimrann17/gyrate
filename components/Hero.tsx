@@ -11,50 +11,19 @@ const Hero = () => {
   const [showMapPopup, setShowMapPopup] = useState(false);
   const [showScooterPopup, setShowScooterPopup] = useState(false);
 
-  // Define scooters with unique entries
+  // Scooters array with unique entries based on brand
   const scooters = [
-
     { brand: "Scooter A", price: 100, speed: 20, image: "/scooters/scooter5.jpeg" },
     { brand: "Scooter B", price: 120, speed: 22, image: "/scooters/scooter2.jpeg" },
     { brand: "Scooter C", price: 150, speed: 25, image: "/scooters/scooter3.jpeg" },
     { brand: "Scooter D", price: 100, speed: 20, image: "/scooters/scooter6.jpeg" },
-
-    {
-      brand: "Scooter A",
-      price: 100,
-      speed: 20,
-      image: "/scooters/scooter1.jpeg",
-    },
-    {
-      brand: "Scooter B",
-      price: 120,
-      speed: 22,
-      image: "/scooters/scooter2.jpeg",
-    },
-    {
-      brand: "Scooter C",
-      price: 150,
-      speed: 25,
-      image: "/scooters/scooter3.jpeg",
-    },
-    {
-      brand: "Scooter D",
-      price: 100,
-      speed: 20,
-      image: "/scooters/scooter4.jpeg",
-    },
-
-    // { brand: "Scooter E", price: 120, speed: 22, image: "/scooters/scooter5.jpeg" },
-    // { brand: "Scooter F", price: 150, speed: 25, image: "/scooters/scooter6.jpeg" },
-    // { brand: "Scooter G", price: 120, speed: 22, image: "/scooters/scooter2.jpeg" },
-    // { brand: "Scooter H", price: 150, speed: 25, image: "/scooters/scooter4.jpeg" },
   ];
 
-  const handleDateChange = (event) => {
+  const handleDateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedDate(event.target.value);
   };
 
-  const handleTimeChange = (event) => {
+  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const [hours, minutes] = value.split(":").map(Number);
 
@@ -73,14 +42,14 @@ const Hero = () => {
     setStops([...stops, ""]);
   };
 
-  const handleStopChange = (index, event) => {
+  const handleStopChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
     const newStops = stops.map((stop, i) =>
       i === index ? event.target.value : stop
     );
     setStops(newStops);
   };
 
-  const handleDeleteStop = (index) => {
+  const handleDeleteStop = (index: number) => {
     const newStops = stops.filter((_, i) => i !== index);
     setStops(newStops);
   };
@@ -112,9 +81,6 @@ const Hero = () => {
         <div className="relative flex flex-1 items-start mt-8">
           <div className="relative z-20 flex w-[380px] flex-col gap-8 rounded-xl bg-blue-500 px-8 py-8 border-4 border-black">
             <div className="flex flex-col">
-              {/* <div className="flexBetween">
-                <p className="regular-16 text-white">Enter Details</p>
-              </div> */}
               <form>
                 <select
                   value={selectedDate}
