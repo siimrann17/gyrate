@@ -52,10 +52,10 @@ export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About Gyrate',
-      'Career',
-      'Privacy Policy',
-      'Contact Us',
+      { label: 'About Gyrate', href: '/About' },
+      { label: 'Career', href: '/career' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Contact Us', href: '/contact' },
     ],
   },
 
@@ -64,7 +64,7 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Admin', value: '123-456-7890' },
+    // { label: 'Admin', value: '123-456-7890' },
     { label: 'Email', value: 'gyrate@gmail.com' },
   ],
 };
@@ -72,9 +72,9 @@ export const FOOTER_CONTACT_INFO = {
 export const SOCIALS = {
   title: 'Social',
   links: [
-    '/facebook.svg',
-    '/instagram.svg',
-    '/twitter.svg',
-    '/linkedin.jpg',
+    // { href: 'https://www.facebook.com', icon: '/facebook.svg' },
+    { href: 'https://www.instagram.com/gyrate.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==https://www.instagram.com', icon: '/instagram.svg' },
+    { href: 'https://www.twitter.com', icon: '/twitter.svg' },
+    { href: 'https://www.linkedin.com', icon: '/linkedin.jpg' },
   ],
 };

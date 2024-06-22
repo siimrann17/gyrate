@@ -146,7 +146,7 @@ const Navbar = () => {
             style={{ borderRadius: "15px" }}
           >
             <button type="button" className="flex items-center">
-              <b>Gyropot</b>
+              <b>Gyropod</b>
               <svg
                 className={`w-4 h-4 ml-2 transition-transform ${
                   dropdownOpen ? "rotate-180" : ""
@@ -167,7 +167,9 @@ const Navbar = () => {
           </div>
           {dropdownOpen && (
             <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10">
-              {["Site 1", "Site 2", "Site 3"].map((site, index) => (
+              {["Gyropod 1"
+              // , "Site 2", "Site 3"
+            ].map((site, index) => (
                 <li
                   key={index}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
