@@ -209,7 +209,6 @@ const Hero = () => {
   const [selectedDuration, setSelectedDuration] = useState("");
   const [dropOffTime, setDropOffTime] = useState("");
 
-  // Scooters array with unique entries based on brand
   const scooters = [
     { brand: "Scooter A", price: 100, speed: 20, image: "/scooters/scooter5.jpeg" },
     { brand: "Scooter B", price: 120, speed: 22, image: "/scooters/scooter2.jpeg" },
@@ -231,7 +230,6 @@ const Hero = () => {
       (hours === 20 && minutes === 0) // 8:00 PM
     ) {
       setStartTime(value);
-      // Reset drop-off time when start time changes
       setDropOffTime("");
     } else {
       alert("Please select a time between 8:00 AM and 8:30 PM");
@@ -256,15 +254,11 @@ const Hero = () => {
 
   const handleDurationChange = (event) => {
     setSelectedDuration(event.target.value);
-    // Calculate drop-off time based on start time and selected duration
     if (startTime && event.target.value) {
       const [startHours, startMinutes] = startTime.split(":").map(Number);
       const durationHours = parseInt(event.target.value);
 
-      const totalMinutes =
-        startHours * 60 +
-        startMinutes +
-        durationHours * 60;
+      const totalMinutes = startHours * 60 + startMinutes + durationHours * 60;
       const hours = Math.floor(totalMinutes / 60);
       const minutes = totalMinutes % 60;
 
@@ -276,7 +270,6 @@ const Hero = () => {
   };
 
   const handleProceed = () => {
-    // Basic form validation
     if (!selectedDate || !startTime || !selectedDuration || !destination) {
       alert("Please fill in all details to proceed.");
       return;
@@ -375,7 +368,7 @@ const Hero = () => {
                       onChange={(e) => handleStopChange(index, e)}
                       className="text-10l border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
                       placeholder={`Stop ${index + 1}`}
-                      style={{ width: "250px" }} // Ensure consistent width
+                      style={{ width: "250px" }} 
                     />
                     <div className="flex items-center">
                       <button
@@ -398,6 +391,13 @@ const Hero = () => {
                 </button>
               </form>
             </div>
+          </div>
+          <div className="relative z-20 w-[500px] h-full flex items-center justify-center -mt-16 ml-56">
+            <img
+              src="1.png"
+              alt="Scooter"
+              className="rounded-xl border-4 w-full h-auto"
+            />
           </div>
         </div>
       </div>
