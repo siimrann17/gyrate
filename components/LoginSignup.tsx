@@ -290,7 +290,11 @@
 // export default LoginSignupModal;
 
 
+import axios from "axios";
+
 import React, { useState } from "react";
+import { cookies } from 'next/headers'
+
 
 type LoginSignupModalProps = {
   isOpen: boolean;
@@ -298,19 +302,37 @@ type LoginSignupModalProps = {
   onSuccess: () => void;
 };
 
-const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps) => {
-  const [isLogin, setIsLogin] = useState(true);
+const LoginSignupModal =  ({ isOpen, onClose, onSuccess }: LoginSignupModalProps) => {
+  const [isLogin, setIsLogin] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     confirmPassword: "",
+    dob:"",
+    gender:"",
+    name:"",
     licenseNumber: "",
     licenseImage: null,
   });
 
+  const [Otp, setOtp]=useState("")
+  const [ifotp, setIfotp] =useState(1)
+  const [isSignup, setIsSignUp] =useState(true)
+  const [finalform, setfinalform] =useState(true)
+
   const toggleForm = () => {
-    setIsLogin(!isLogin);
+    if(isLogin){
+
+      setIsLogin(!isLogin);
+       setIsSignUp(!isSignup);
+    }
+    else{
+      setIsLogin(!isLogin);
+      setIsSignUp(!isSignup);
+    }
+
   };
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, files } = e.target;
@@ -326,7 +348,49 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
     // Add logic to handle login or signup
     onSuccess();
   };
+  const handleSignupSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
+      var config={
+      url:"/api/sendOtp",
+      method:"post",
+      data:{email:formData.email}
+    }
+    axios.request(config).then((res)=>{console.log(res.data)})
+    // Add logic to handle login or signup
+    setIfotp(0)
+    setIsSignUp(true)
+    // onSuccess();
+  };
+  const handleOtpSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      var config={
+      url:"/api/verifyOtp",
+      method:"post",
+      data:{email:formData.email,otp:Otp}
+    }
+     axios.request(config).then((res)=>{
+        console.log(res.data)
+        if(res.data.status ==1){
+          setfinalform(!finalform)
+          setIfotp(1)
+        }
+     })
+
+  }
+
+  const handleFinalFormSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
+   
+    e.preventDefault();
+    var config={
+      url:"/api/loginForm",
+      method:"post",
+      data:{formData:formData}
+    }
+     axios.request(config).then((res)=>{
+      console.log(res)
+     })
+  }
   const handleGoogleSignIn = () => {
     // Implement Google sign-in logic here
     // For demonstration purposes, we'll just simulate a successful login after 1 second
@@ -343,7 +407,7 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
           &times;
         </button>
-        {isLogin ? (
+        {!isLogin &&
           <div>
             <h2 className="text-2xl font-bold mb-4">Login</h2>
             <form onSubmit={handleSubmit}>
@@ -382,15 +446,42 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
               </button>
             </div>
           </div>
-        ) : (
+         } {!finalform && 
           <div>
             <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleFinalFormSubmit}>
               <input
+                type="name"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 border rounded"
+                required
+              />
+              {/* <input
                 type="email"
                 name="email"
                 placeholder="Email"
                 value={formData.email}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 border rounded"
+                required */}
+              {/* /> */}
+              <input
+                type="dob"
+                name="dob"
+                placeholder="Date of Birth"
+                value={formData.dob}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 border rounded"
+                required
+              />
+              <input
+                type="gender"
+                name="gender"
+                placeholder="Gender"
+                value={formData.gender}
                 onChange={handleChange}
                 className="w-full p-2 mb-2 border rounded"
                 required
@@ -416,7 +507,7 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
               <input
                 type="text"
                 name="licenseNumber"
-                placeholder="License Number"
+                placeholder="License Number (Optional)"
                 value={formData.licenseNumber}
                 onChange={handleChange}
                 className="w-full p-2 mb-2 border rounded"
@@ -446,7 +537,59 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
               </button>
             </div>
           </div>
-        )}
+        }
+
+        {!isSignup &&  
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+             <form onSubmit={handleSignupSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 border rounded"
+                required
+              />
+              <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+              Verify Email
+              </button>
+              </form>
+            <p className="mt-4 text-center">
+              Already have an account?{" "}
+              <button onClick={toggleForm} className="text-blue-500 hover:underline">
+                Login
+              </button>
+            </p>
+          </div>
+        }
+        {!ifotp &&  
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Verify OTP</h2>
+             <form onSubmit={handleOtpSubmit}>
+              <input
+                type="Otp"
+                name="Otp"
+                placeholder="Otp"
+                value={Otp}
+                onChange={(e)=>setOtp(e.target.value)}
+                className="w-full p-2 mb-2 border rounded"
+                required
+              />
+              <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+              Verify Email
+              </button>
+              </form>
+            <p className="mt-4 text-center">
+              Already have an account?{" "}
+              <button onClick={toggleForm} className="text-blue-500 hover:underline">
+                Login
+              </button>
+            </p>
+          </div>
+        }
+        
       </div>
     </div>
   );

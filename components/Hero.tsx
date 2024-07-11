@@ -195,11 +195,13 @@
 // export default Hero;
 
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import PopUp from "./PopUp";
 import ScooterPopup from "./ScooterPopup";
+import axios from "axios"
 
-const Hero = () => {
+
+const Hero =  () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [destination, setDestination] = useState("");
@@ -208,6 +210,14 @@ const Hero = () => {
   const [showScooterPopup, setShowScooterPopup] = useState(false);
   const [selectedDuration, setSelectedDuration] = useState("");
   const [dropOffTime, setDropOffTime] = useState("");
+  const [loactionSugesstion, setloactionSugesstion] = useState([]);
+  const [showsuggestions, setshowsuggestions] = useState(1);
+  const [sugggestionsSelected, setsugggestionsSelected] = useState(1);
+  const [destinationEloc1, setdestinationEloc1] = useState("");
+  const [points, setpoints] = useState<any>([]);
+  const [distance, setdistance] = useState<any>("");
+  // const [elocs, setloactionSugesstion] = useState([]);
+
 
   // Scooters array with unique entries based on brand
   const scooters = [
@@ -281,7 +291,26 @@ const Hero = () => {
       alert("Please fill in all details to proceed.");
       return;
     }
+    var config={
+      url:"/api/getpolyline",
+      method:"post",
+      data:{query:"BCDFS2;"+destinationEloc1}
+    }
+    axios.request(config).then((res)=>{
+    // setloactionSugesstion(res.data)
+    // console.log("hello here is the points")
+    var a=[]
+    res.data.points.map((e)=> {
+      var b=[]
+      e.map((e2)=>{b.push(e2)})
+      a.push(b)
+      setdistance((res.data.distance/1000).toFixed(1))
+      
+    })
+    // console.log(typeof(a))
+    setpoints(a)
     setShowMapPopup(true);
+    })
   };
 
   const handleCloseMapPopup = () => {
@@ -296,6 +325,41 @@ const Hero = () => {
   const handleCloseScooterPopup = () => {
     setShowScooterPopup(false);
   };
+
+  const handleSelection = (a) => {
+    setshowsuggestions(1)
+    setsugggestionsSelected(0)
+    setDestination(loactionSugesstion[a-1].placeName)
+    setdestinationEloc1(loactionSugesstion[a-1].eLoc)
+  };
+
+    
+  const yourFunction =  () => {
+    var config={
+      url:"/api/getdata",
+      method:"post",
+      data:{query:destination}
+    }
+    axios.request(config).then((res)=>{
+    setloactionSugesstion(res.data.suggestedLocations)
+    // console.log(loactionSugesstion)
+    })
+
+    if(destination.length>3){
+      if(sugggestionsSelected){
+
+        setshowsuggestions(0)
+      }
+      setsugggestionsSelected(1)
+    }
+    
+  };
+  useEffect(()=> yourFunction() ,[destination])
+
+
+
+
+  
 
   return (
     <section className="max-container padding-container flex flex-col gap-10 py-10 pb-32 md:gap-28 mt-0 lg:py-20 xl:flex-row">
@@ -330,6 +394,7 @@ const Hero = () => {
                   min="08:00"
                   max="20:30"
                 />
+             
 
                 <select
                   value={selectedDuration}
@@ -349,13 +414,25 @@ const Hero = () => {
                 </select>
 
                 <div className="flex items-center">
+                <div className="relative">
                   <input
                     type="text"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    className="text-10l text-gray-30 border-zinc-800 w-[250px] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
+                    className="text-10l text-gray-30 border-zinc-800 w-[85%] border-2 ml-8 mt-1 mr-2 px-4 py-2 rounded-md"
                     placeholder="Destination"
+                    id="auto"
                   />
+                  {!showsuggestions &&
+                  
+                  <div className="flex flex-col ml-8 mr-2 px-4 rounded-md border-2 bg-white w-[85%] absolute ">
+                    {loactionSugesstion?.map((e)=> <div onClick={()=>handleSelection(e.orderIndex)} key={e.orderIndex} className="mt-2 border-b-2 ">{e.placeName}</div>)}
+                     </div>
+              }
+                
+                </div>
+
+             
                   <div className="flex items-center">
                     <button
                       type="button"
@@ -366,7 +443,6 @@ const Hero = () => {
                     </button>
                   </div>
                 </div>
-
                 {stops.map((stop, index) => (
                   <div key={index} className="flex items-center mt-2">
                     <input
@@ -404,12 +480,13 @@ const Hero = () => {
 
       {showMapPopup && (
         <PopUp
-          distance="10"
+          distance={distance}
           duration={selectedDuration}
           pickupTime={startTime}
           dropOffTime={dropOffTime}
           onClose={handleCloseMapPopup}
           onNext={handleNextPopup}
+          points={points}
         />
       )}
 

@@ -12,9 +12,11 @@ import ScooterPopup from "@/components/ScooterPopup";
 import Chatbot from "@/components/Chatbot";
 
 
+
 export default function Home() {
   return (
     <>
+   
       <Hero />
       {/* <Camp /> */} 
       <Chatbot />

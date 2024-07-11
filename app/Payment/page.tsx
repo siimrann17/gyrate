@@ -147,7 +147,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 const Payment = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [scooterDetails, setScooterDetails] = useState(null);
+  const [scooterDetails, setScooterDetails] = useState();
   const [paymentMethod, setPaymentMethod] = useState('UPI');
   const [upiId, setUpiId] = useState("");
   const [cardNumber, setCardNumber] = useState("");
