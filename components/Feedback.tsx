@@ -145,7 +145,7 @@ const FeedbackSection = () => {
           </button>
           <div ref={scrollContainerRef} className="flex flex-no-wrap overflow-x-hidden scrollbar-hide">
             {feedbacks.map(({ id, name, feedback, rating }) => (
-              <div key={id} className="flex-shrink-0 w-96 bg-gray-100 p-6 rounded-lg shadow-md mx-4">
+              <div key={id} className="flex-shrink-0 w-96 bg-white p-6 rounded-lg shadow-md mx-4">
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">{name}</h3>
                 <p className="text-gray-600 mb-4">{feedback}</p>
                 <div className="flex items-center mb-9">
