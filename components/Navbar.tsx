@@ -280,11 +280,15 @@ import Link from "next/link";
 import { useState } from "react";
 import Button from "./Button";
 import LoginSignup from "./LoginSignup";
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -305,6 +309,9 @@ const Navbar = () => {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+  };
+  const handleRedirect = () => {
+    router.push('/MyRide'); 
   };
 
   return (
@@ -383,7 +390,7 @@ const Navbar = () => {
               title="My Rides"
               variant="btn_dark_green"
               className="block px-4 py-1.5 text-sm"
-              onClick={() => console.log("My Rides")}
+              onClick={handleRedirect}
             />
             <Button
               type="button"

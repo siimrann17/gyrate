@@ -53,7 +53,7 @@ export const FOOTER_LINKS = [
     title: 'Learn More',
     links: [
       { label: 'About Gyrate', href: '/About' },
-      { label: 'Career', href: '/career' },
+      { label: 'Careers', href: '/career' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
       // { label: 'Contact Us', href: '/contact' },
     ],
@@ -65,7 +65,7 @@ export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
     // { label: 'Admin', value: '123-456-7890' },
-    { label: 'Email', value: 'gyrate@gmail.com' },
+    { label: 'Email', value: 'gyrateone@gmail.com' },
   ],
 };
 

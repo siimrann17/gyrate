@@ -15,7 +15,7 @@ const Environment = () => {
       </Head>
 
       <div className="min-h-screen bg-gradient-to-r p-5">
-        <h1 className="text-4xl font-bold text-center text-black mb-8">
+        <h1 className="text-5xl font-bold text-center text-black mb-8">
           Pioneering Environmental Change Together
         </h1>
 

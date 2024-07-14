@@ -194,7 +194,7 @@
 
 // export default Hero;
 
-
+//////////////////////////////////////////////////////////////////
 import React, { useState } from "react";
 import PopUp from "./PopUp";
 import ScooterPopup from "./ScooterPopup";
@@ -298,13 +298,13 @@ const Hero = () => {
         <h1 className="bold-52 lg:bold-87.8">Get Set Gyrate!</h1>
 
         <div className="relative flex flex-1 items-start mt-8">
-          <div className="relative z-20 flex w-[380px] flex-col gap-8 rounded-xl bg-blue-500 px-8 py-8 border-4 border-black">
+          <div className="relative z-20 flex w-[380px] flex-col gap-8 rounded-xl bg-rgb(202, 244, 255) px-8 py-8 ">
             <div className="flex flex-col">
               <form>
                 <select
                   value={selectedDate}
                   onChange={handleDateChange}
-                  className="text-10l text-gray-20 border-zinc-800 w-[250px] border-2 ml-8 m-5 px-4 py-2 rounded-md"
+                  className="text-10l text-gray-20 border-zinc-800 w-[250px] border-2 ml-8 m-5 px-8 py-2 rounded-md"
                 >
                   <option value="" disabled>
                     Select Day
@@ -332,13 +332,13 @@ const Hero = () => {
                   <option value="" disabled>
                     Duration
                   </option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                  <option value="4">Four</option>
-                  <option value="5">Five</option>
-                  <option value="6">Six</option>
-                  <option value="7">Seven</option>
+                  <option value="1">One Hour</option>
+                  <option value="2">Two Hour</option>
+                  <option value="3">Three Hour</option>
+                  <option value="4">Four Hour</option>
+                  <option value="5">Five Hour</option>
+                  <option value="6">Six Hour</option>
+                  <option value="7">Seven Hour</option>
                 </select>
 
                 <div className="flex items-center">
@@ -385,7 +385,7 @@ const Hero = () => {
                 <button
                   type="button"
                   onClick={handleProceed}
-                  className="border-black border-5 w-[250px] bg-white text-black text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2 rounded-md"
+                  className="border-black border-5 w-[250px] bg-blue-500 text-black text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2 rounded-md"
                 >
                   Proceed
                 </button>

@@ -60,7 +60,9 @@ export default function AboutUs() {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Join Us</h2>
-          <p className="text-lg text-gray-700">We’re always on the lookout for talented individuals who share our vision of redefining urban mobility. If you’re passionate about making a positive impact and eager to be part of a dynamic team, Gyrate is the place for you. Visit our <a href="#" className="text-blue-500 underline">careers page</a> to learn more about current opportunities.</p>
+          <p className="text-lg text-gray-700">We’re always on the lookout for talented individuals who share our vision of redefining urban mobility. If you’re passionate about making a positive impact and eager to be part of a dynamic team, Gyrate is the place for you. 
+            {/* Visit our <a href="#" className="text-blue-500 underline">careers page</a> to learn more about current opportunities. */}
+            </p>
         </section>
       </div>
     </div>
