@@ -17,9 +17,9 @@ const Footer = () => {
               <FooterColumn title={columns.title} key={columns.title}>
                 <ul className="regular-14 flex flex-col gap-4 text-black">
                   {columns.links.map((link) => (
-                    <Link href={link.href} key={link.label}>
-                      {link.label}
-                    </Link>
+                    <li key={link.label}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
                   ))}
                 </ul>
               </FooterColumn>
@@ -31,7 +31,7 @@ const Footer = () => {
                   <div key={link.label} className="flex gap-4 md:flex-col lg:flex-row">
                     <p className="whitespace-nowrap">{link.label}:</p>
                     <p className="medium-14 whitespace-nowrap text-blue-70">
-                      {link.value}
+                      <a href={`mailto:${link.value}`}>{link.value.replace('mailto:', '')}</a>
                     </p>
                   </div>
                 ))}
@@ -42,9 +42,11 @@ const Footer = () => {
               <FooterColumn title={SOCIALS.title}>
                 <ul className="regular-14 flex gap-4 text-gray-30">
                   {SOCIALS.links.map((link) => (
-                    <Link href={link.href} key={link.href}>
-                      <Image src={link.icon} alt={link.href} width={24} height={24} />
-                    </Link>
+                    <li key={link.href}>
+                      <Link href={link.href}>
+                        <Image src={link.icon} alt={link.href} width={24} height={24} />
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </FooterColumn>

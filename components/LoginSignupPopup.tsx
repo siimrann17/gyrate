@@ -170,7 +170,7 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === 'licenseImage') {
-      setFormData((prevData) => ({ ...prevData, [name]: files[0] }));
+      setFormData((prevData) => ({ ...prevData, [name]: files ? files[0] : null }));
     } else {
       setFormData((prevData) => ({ ...prevData, [name]: value }));
     }
@@ -178,14 +178,10 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle login or signup
-    // If login/signup is successful, call onLoginSignupSuccess()
     onLoginSignupSuccess();
   };
 
   const handleGoogleSignIn = () => {
-    // Implement Google sign-in logic here
-    // For demonstration purposes, we'll just simulate a successful login after 1 second
     setTimeout(() => {
       onLoginSignupSuccess();
     }, 1000);
@@ -283,12 +279,15 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
             required
             className="w-full p-2 mb-2 border rounded"
           />
+        
+<div className="flex justify-center">
           <button
             type="submit"
-            className="px-4 py-2 mt-4 bg-blue-500 text-white rounded w-full"
+            className="px-4 py-2 mt-4 bg-blue-500 text-white rounded w-2/4 "
           >
             {isSignup ? 'Signup' : 'Login'}
           </button>
+          </div>
         </form>
         <div className="flex justify-between mt-4">
           <button
@@ -306,8 +305,8 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
         </div>
         <div className="mt-4 text-center">
           Or continue with Google
-          <button onClick={handleGoogleSignIn} className="ml-2 p-2 bg-blue-400 text-white rounded">
-            Sign in with Google
+          <button onClick={handleGoogleSignIn} className="ml-2 p-2 rounded">
+            <img src="/google.png" alt="Google Sign-In" className="w-6 h-6 inline-block" />
           </button>
         </div>
       </div>
@@ -316,4 +315,3 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
 };
 
 export default LoginSignupPopup;
-

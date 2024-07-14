@@ -315,7 +315,7 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, files } = e.target;
     if (name === "licenseImage") {
-      setFormData((prevData) => ({ ...prevData, [name]: files[0] }));
+      setFormData((prevData) => ({ ...prevData, [name]: files ? files[0] : null }));
     } else {
       setFormData((prevData) => ({ ...prevData, [name]: value }));
     }
@@ -365,9 +365,11 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
                 className="w-full p-2 mb-4 border rounded"
                 required
               />
-              <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
-                Login
-              </button>
+         <div className="flex justify-center">
+  <button type="submit" className=" w-3/4 bg-blue-500 text-white px-2 py-1 rounded">
+    Login
+  </button>
+</div>
             </form>
             <p className="mt-4 text-center">
               Don’t have an account?{" "}
@@ -377,8 +379,8 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
             </p>
             <div className="mt-4 text-center">
               Or continue with Google
-              <button onClick={handleGoogleSignIn} className="ml-2 p-2 bg-blue-400 text-white rounded">
-                Sign in with Google
+              <button onClick={handleGoogleSignIn} className="ml-2 p-2 rounded">
+                <img src="/google.png" alt="Google Sign-In" className="w-6 h-6 inline-block" />
               </button>
             </div>
           </div>
@@ -441,8 +443,8 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
             </p>
             <div className="mt-4 text-center">
               Or continue with Google
-              <button onClick={handleGoogleSignIn} className="ml-2 p-2 bg-blue-400 text-white rounded">
-                Sign in with Google
+              <button onClick={handleGoogleSignIn} className="ml-2 p-2 rounded">
+                <img src="/google-icon.png" alt="Google Sign-In" className="w-6 h-6 inline-block" />
               </button>
             </div>
           </div>
@@ -453,4 +455,3 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
 };
 
 export default LoginSignupModal;
-

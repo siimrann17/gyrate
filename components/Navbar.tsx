@@ -286,6 +286,7 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [selectedGyropod, setSelectedGyropod] = useState("Gyropod");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -310,8 +311,14 @@ const Navbar = () => {
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
+
   const handleRedirect = () => {
     router.push('/MyRide'); 
+  };
+
+  const handleGyropodSelect = (gyropod) => {
+    setSelectedGyropod(gyropod);
+    setDropdownOpen(false);
   };
 
   return (
@@ -348,7 +355,7 @@ const Navbar = () => {
             style={{ borderRadius: "15px" }}
           >
             <button type="button" className="flex items-center">
-              <b>Gyropod</b>
+              <b>{selectedGyropod}</b>
               <svg
                 className={`w-4 h-4 ml-2 transition-transform ${
                   dropdownOpen ? "rotate-180" : ""
@@ -374,6 +381,7 @@ const Navbar = () => {
               ].map((site, index) => (
                 <li
                   key={index}
+                  onClick={() => handleGyropodSelect(site)}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   {site}
