@@ -190,7 +190,7 @@ const Hero = () => {
                 <button
                   type="button"
                   onClick={handleProceed}
-                  className="bg-blue-500 text-black text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2 rounded-md"
+                  className="bg-blue-500 text-white text-51 font-bold rounded ml-8 mt-6 m-1 px-4 py-2 rounded-md"
                 >
                   Proceed
                 </button>
