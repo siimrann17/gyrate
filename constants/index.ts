@@ -65,7 +65,7 @@ export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
     // { label: 'Admin', value: '123-456-7890' },
-    { label: 'Email', value: 'gyrate@gmail.com' },
+    { label: 'Email', value: 'gyrateone@gmail.com' },
   ],
 };
 
