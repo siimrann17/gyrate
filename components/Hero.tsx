@@ -245,10 +245,10 @@ const Hero = () => {
   const [dropOffTime, setDropOffTime] = useState("");
 
   const scooters = [
-    { brand: "Scooter A", price: 100, speed: 20, image: "/scooters/scooter5.jpeg" },
-    { brand: "Scooter B", price: 120, speed: 22, image: "/scooters/scooter2.jpeg" },
-    { brand: "Scooter C", price: 150, speed: 25, image: "/scooters/scooter3.jpeg" },
-    { brand: "Scooter D", price: 100, speed: 20, image: "/scooters/scooter6.jpeg" },
+    { brand: "Ather 450x", price: 100, speed: 20, image: "/scooters/Ather 450x.jpg" },
+    { brand: "Bounce infinite E1", price: 120, speed: 22, image: "scooters/Bounce infinite E1.jpg" },
+    { brand: "Ola s1x", price: 150, speed: 25, image: "/scooters/Ola s1x.jpg" },
+    { brand: "Tvs iqube", price: 100, speed: 20, image: "/scooters/Tvs iqube.jpg" },
   ];
 
   const handleDateChange = (event) => {

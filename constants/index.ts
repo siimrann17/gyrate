@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
   { href: '/About', key: 'AboutUs', label: 'About Us' },
   { href: '/', key: 'services', label: 'Beacon' },
-  { href: '/', key: 'contact_us', label: 'Help' },
+  { href: '/Help', key: 'contact_us', label: 'Help' },
 ];
 
 // CAMP SECTION
