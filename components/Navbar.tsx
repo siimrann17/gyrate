@@ -452,6 +452,9 @@ import Link from "next/link";
 import { useState } from "react";
 import Button from "./Button";
 import LoginSignup from "./LoginSignup";
+import ProfilePage from "./ProfilePage";
+import AdminProfile from "./AdminProfile";
+
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const Navbar = () => {
@@ -459,6 +462,7 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedGyropod, setSelectedGyropod] = useState("Gyropod");
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -485,6 +489,7 @@ const Navbar = () => {
   };
 
   const handleRedirect = () => {
+    setIsProfileModalOpen(false); 
     router.push('/MyRide'); 
   };
 
@@ -493,8 +498,12 @@ const Navbar = () => {
     setDropdownOpen(false);
   };
 
-  const handleProfileRedirect = () => {
-    router.push('/Profile');
+  const openProfileModal = () => {
+    setIsProfileModalOpen(true);
+  };
+
+  const closeProfileModal = () => {
+    setIsProfileModalOpen(false);
   };
 
   return (
@@ -590,7 +599,7 @@ const Navbar = () => {
               height={32}
               className="inline-block cursor-pointer"
               style={{ filter: "invert(0)", color: "black" }} 
-              onClick={handleProfileRedirect}
+              onClick={openProfileModal}
             />
           </>
         ) : (
@@ -615,6 +624,34 @@ const Navbar = () => {
 
       {/* Include the modal component */}
       <LoginSignup isOpen={isModalOpen} onClose={closeModal} onSuccess={handleLoginSignupSuccess} />
+      
+      {/* Include Profile Modal */}
+      {isProfileModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <div className="relative bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-4">
+            <AdminProfile onClose={closeProfileModal} />
+            <button
+              onClick={closeProfileModal}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -444,7 +444,7 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
             <div className="mt-4 text-center">
               Or continue with Google
               <button onClick={handleGoogleSignIn} className="ml-2 p-2 rounded">
-                <img src="/google-icon.png" alt="Google Sign-In" className="w-6 h-6 inline-block" />
+                <img src="/google.png" alt="Google Sign-In" className="w-6 h-6 inline-block" />
               </button>
             </div>
           </div>
