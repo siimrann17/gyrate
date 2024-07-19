@@ -84,7 +84,7 @@ export default function AboutUs() {
             <p className="text-lg text-gray-700">At Gyrate, we envision a world where city travel is seamless, sustainable, and accessible to all. We believe in a future where every urban journey is an opportunity for joy and discovery, not a challenge to overcome.</p>
           </div>
           <div className="md:w-3/4 mt-8 px-44 md:mt-0">
-            <Image src="/gyrate_scooter.jpeg" alt="Gyrate Scooter" width={600} height={450} className="rounded-lg shadow-lg" />
+            <Image src="/sss.jpg" alt="Gyrate Scooter" width={600} height={450} className="rounded-lg shadow-lg" />
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function AboutUs() {
             <p className="text-blue-500 mt-4"><a href="#" className="underline">Know more</a></p>
           </div>
           <div className="md:w-3/4 mt-8 px-44 md:mt-0">
-            <Image src="/explore_city.jpeg" alt="Explore the City" width={600} height={450} className="rounded-lg shadow-lg" />
+            <Image src="/city.jpg" alt="Explore the City" width={600} height={450} className="rounded-lg shadow-lg" />
           </div>
         </section>
 
