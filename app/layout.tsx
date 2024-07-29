@@ -35,6 +35,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import Provider from "./Provider";
+
 
 // Metadata definition for the application
 export const metadata: Metadata = {
@@ -43,13 +45,15 @@ export const metadata: Metadata = {
 };
 
 // Define the main RootLayout component
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children}: { children: React.ReactNode,  }) {
   return (
     <html lang="en">
       <body>
+        <Provider>
         <Navbar />
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
+        </Provider>
       </body>
     </html>
   );
