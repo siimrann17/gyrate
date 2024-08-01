@@ -570,12 +570,39 @@ const LoginSignupModal = ({ isOpen, onClose, onSuccess }: LoginSignupModalProps)
     const data = isLogin ? { email, password } : { email, password };
 
     try {
+
       const response = await axios.post(url, data, {
-        headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' }
       });
+      console.log(response);
+      // const curr=await axios.post('http://localhost:5000/api/auth/getuser',
+      //   {
+      //     headers: {
+      //         'Content-Type': 'application/json',
+      //         'auth-token': response.data.authtoken
+      //     },
+      //   }
+        
+      // )
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+myHeaders.append("auth-token" ,response.data.authtoken)
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+ 
+  redirect: "follow"
+};
+const res = await fetch("http://localhost:5000/api/auth/getuser", requestOptions)
+      // console.log(curr);
+      console.log(await res.json());
+      const mail=await res.json();
+      
 
       // Assuming the response contains the user's email
       const userEmail = response.data.email; 
+      localStorage.setItem("currentEmail",userEmail); 
+      console.log()
       onSuccess(userEmail); // Pass email to onSuccess
 
     } catch (error) {

@@ -1115,7 +1115,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedGyropod, setSelectedGyropod] = useState("Gyropod");
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [currentEmail, setCurrentEmail] = useState<any>(); 
+  const [currentEmail, setCurrentEmail] = useState<string | null>(null); 
 
   const router = useRouter();
   const pathname = usePathname();
@@ -1133,8 +1133,8 @@ const Navbar = () => {
     {
       setCurrentEmail(null);
     }
-    console.log(currentEmail);
-    console.log(email);
+    // console.log(currentEmail);
+    // console.log(email);
   }, [isLoggedIn]);
 
   const toggleDropdown = () => {
@@ -1178,7 +1178,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 py-5 bg-blue-mainblue">
+    <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 py-5 bg-white">
       <Link href="/">
         <Image
           src="/gyrateLogo.jpeg"
@@ -1194,7 +1194,7 @@ const Navbar = () => {
           <li key={link.key}>
             <Link
               href={link.href}
-              className="text-gray-50 cursor-pointer transition-all hover:text-blue-dark hover:font-bold"
+              className="text-black   cursor-pointer transition-all hover:text-blue-dark hover:font-bold"
             >
               {link.label}
             </Link>

@@ -14,7 +14,8 @@
 
 body {
   font-family: 'Montserrat';
-  background-color: rgb(202, 244, 255);
+  /* background-color: rgb(202, 244, 255); */
+  background-color: white;
 }
 
 @layer utilities {
