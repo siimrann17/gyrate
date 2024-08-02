@@ -36,6 +36,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Provider from "./Provider";
+import { AuthProvider } from "../context/authContext";
 
 
 // Metadata definition for the application
@@ -49,11 +50,13 @@ export default function RootLayout({ children}: { children: React.ReactNode,  })
   return (
     <html lang="en">
       <body>
-        <Provider>
+        <AuthProvider>
+        {/* <Provider> */}
         <Navbar />
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
-        </Provider>
+        {/* </Provider> */}
+        </AuthProvider>
       </body>
     </html>
   );
