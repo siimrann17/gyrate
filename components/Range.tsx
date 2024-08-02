@@ -1,5 +1,3 @@
-
-
 'use client';  
 
 import { useEffect, useRef } from 'react';
@@ -7,12 +5,53 @@ import Image from 'next/image';
 
 const PremiumScooters = () => {
   const scooters = [
-    { id: 1, src: '/scooters/scooter1.jpeg', title: 'Scooter Model 1', description: 'Description of the first scooter model.' },
-    { id: 2, src: '/scooters/scooter2.jpeg', title: 'Scooter Model 2', description: 'Description of the second scooter model.' },
-    { id: 3, src: '/scooters/scooter3.jpeg', title: 'Scooter Model 3', description: 'Description of the third scooter model.' },
-    { id: 4, src: '/scooters/scooter4.jpeg', title: 'Scooter Model 4', description: 'Description of the fourth scooter model.' },
-    { id: 5, src: '/scooters/scooter5.jpeg', title: 'Scooter Model 5', description: 'Description of the fifth scooter model.' },
-    { id: 6, src: '/scooters/scooter6.jpeg', title: 'Scooter Model 6', description: 'Description of the sixth scooter model.' },
+    {
+      id: 1,
+      src: '/scooters/Ather 450x.jpg',
+      title: 'Ather 450x',
+      description: [
+        ' Top Speed - 90 KMPH',
+        ' Range - 150 km',
+        ' Acceleration - 0-40 kmph in 3.3 sec.',
+        ' Calls, messages, and music',
+        ' Display – smart Touchscreen',
+      ],
+    },
+    {
+      id: 2,
+      src: '/scooters/Bounce infinite E1.jpg',
+      title: 'Bounce infinite E1',
+      description: [
+        ' Top Speed - 70 KMPH',
+        ' Range - 65 KM',
+        ' Acceleration - 0-40 kmph in 5-6 sec.',
+        ' Display - Digital',
+      ],
+    },
+    {
+      id: 3,
+      src: '/scooters/Ola s1x.jpg',
+      title: 'Ola s1x',
+      description: [
+        ' Top Speed - 90 KMPH',
+        ' Range - 193km',
+        ' Acceleration - 0-40 kmph in 3.3 sec.',
+        ' Calls, messages, and music',
+        ' Display – smart Touchscreen',
+      ],
+    },
+    {
+      id: 4,
+      src: '/scooters/Tvs iqube.jpg',
+      title: 'Tvs iqube',
+      description: [
+        ' Top Speed - 70 KMPH',
+        ' Range - 74 Km',
+        ' Acceleration - 0-40 kmph in 4.3 sec.',
+        ' Display - Digital',
+        ' Calls, messages, and music',
+      ],
+    },
   ];
 
   const carouselRef = useRef(null);
@@ -70,7 +109,11 @@ const PremiumScooters = () => {
                   className="rounded-md mb-4"
                 />
                 <h3 className="text-xl font-semibold text-gray-700">{scooter.title}</h3>
-                <p className="text-gray-600 mt-2">{scooter.description}</p>
+                <ul className="text-gray-600 mt-2 list-disc pl-4">
+                  {scooter.description.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -81,4 +124,3 @@ const PremiumScooters = () => {
 };
 
 export default PremiumScooters;
-

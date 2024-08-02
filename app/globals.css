@@ -13,8 +13,9 @@
   }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: rgb(202, 244, 255);
+  font-family: 'Montserrat';
+  /* background-color: rgb(202, 244, 255); */
+  background-color: white;
 }
 
 @layer utilities {
