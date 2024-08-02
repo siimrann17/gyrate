@@ -1297,9 +1297,9 @@ const Navbar = () => {
           <div className="relative bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-4"> 
              
             { currentEmail && currentEmail === 'pushanag@gmail.com' ? (
-            <AdminProfile onClose={closeProfileModal}/>
+             <ProfilePage onClose={closeProfileModal}  />
             ) : (
-               <ProfilePage onClose={closeProfileModal}  />
+              <AdminProfile onClose={closeProfileModal}/>
              
             )}
             <button
