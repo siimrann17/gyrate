@@ -178,7 +178,8 @@ const LoginSignupPopup = ({ onClose, onLoginSignupSuccess }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLoginSignupSuccess();
+    // onLoginSignupSuccess();
+    
   };
 
   const handleGoogleSignIn = () => {

@@ -1099,7 +1099,7 @@
 
 
 "use client";
-import { useEffect, useState } from "react"; 
+import { useContext, useEffect, useState } from "react"; 
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
@@ -1108,8 +1108,10 @@ import Button from "./Button";
 import LoginSignupModal from "../app/login/page";
 import ProfilePage from "./ProfilePage";
 import AdminProfile from "./AdminProfile";
+import { AuthContext } from "@/context/authContext";
 
 const Navbar = () => {
+  const {dummy} = useContext(AuthContext)
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -1123,7 +1125,7 @@ const Navbar = () => {
 
  
   useEffect(() => {
- 
+    console.log(dummy)
     const email = localStorage.getItem("currentEmail"); 
     if(email)
     {
