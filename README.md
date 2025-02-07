@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/51be8576-042f-46c1-9bc6-f650566dfc3f)
+
 # Gyrate - Revolutionizing Urban Mobility 🚲⚡
 # Full Stack Project
 
